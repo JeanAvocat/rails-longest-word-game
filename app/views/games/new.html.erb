@@ -1,0 +1,19 @@
+<div class="p-3 text-center">
+  <h1>Here are your letters: </h1>
+
+  <div class="card p-5 m-4 bg-warning">
+    <ul class ="d-flex justify-content-around align-items-center">
+      <% @letters.each do |letter| %>
+        <li><%= letter %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <form class="card p-5 m-4 bg-warning bg-opacity-50 d-flex flex-column bd-highlight align-items-center" action="/score" method="post" data-turbo="false">
+    <label>What is the longest word you can find?</label>
+    <input class="m-2" type="text" name="try" value="<%= params[:try] %>" placeholder="Give a word">
+    <input class = "btn btn-success m-2" type="submit" value="Play">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input value='<%=@letters.join%>' name="letters" type="hidden" />
+  </form>
+</div>

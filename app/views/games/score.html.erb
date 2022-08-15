@@ -1,0 +1,17 @@
+<div class="text-center mt-4">
+  <h1>RESULT: </h1>
+
+  <div class="card p-2 m-4">
+    <h2><%= @message %></h2>
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="card-body bg-success text-white bg-opacity-75 border border-5" style="width: 18rem">
+        <p>Given letters: <%= @given_letters.join(" ") %></p>
+        <p>(you wrote <strong><%= @word %></strong>)</p>
+        <h2>***************</h2>
+        <p>You have now <%= @points %> points</p>
+        <h2>***************</h2>
+      </div>
+    </div>
+  </div>
+  <%= link_to "New game", new_path %>
+</div>
